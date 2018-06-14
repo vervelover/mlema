@@ -22,7 +22,7 @@ include_once (get_template_directory().'/lib/init.php');
 // Define theme constants.
 define('CHILD_THEME_NAME', 'Business Pro Theme');
 define('CHILD_THEME_URL', 'https://seothemes.com/themes/business-pro');
-define('CHILD_THEME_VERSION', '1.0.5');
+define('CHILD_THEME_VERSION', '1.0.5ab');
 
 // Set Localization (do not remove).
 load_child_theme_textdomain('business-pro-theme', apply_filters('child_theme_textdomain', get_stylesheet_directory().'/languages', 'business-pro-theme'));
@@ -410,3 +410,19 @@ function ap_filter_woocommerce_style_smallscreen_breakpoint($breakpoint) {
 	return $breakpoint;
 };
 add_filter('woocommerce_style_smallscreen_breakpoint', 'ap_filter_woocommerce_style_smallscreen_breakpoint', 10, 1);
+
+/* Set gallery thumbnail sizes*/
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+	return array(
+		'width' => 898,
+		'crop' => 0,
+		);
+} );
+
+add_filter( 'woocommerce_single_product_image_gallery_classes', 'bbloomer_5_columns_product_gallery' );
+
+function bbloomer_5_columns_product_gallery( $wrapper_classes ) {
+	$columns = 1; // change this to 2, 3, 5, etc. Default is 4.
+	$wrapper_classes[2] = 'woocommerce-product-gallery--columns-' . absint( $columns );
+	return $wrapper_classes;
+}

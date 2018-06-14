@@ -28,6 +28,22 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+/** Custom FlexSlider Navigation **/
+
+add_theme_support( 'wc-product-gallery-slider' );
+// Update WooCommerce Flexslider options
+
+add_filter( 'woocommerce_single_product_carousel_options', 'ap_update_woo_flexslider_options' );
+
+function ap_update_woo_flexslider_options( $options ) {
+
+	/* properties here: https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties */
+    $options['directionNav'] = true;
+    $options['touch'] = true;
+
+    return $options;
+}
+
 /** Enqueue JS scripts */
 add_action( 'wp_enqueue_scripts', 'ap_sticky_small_summary' );
 function ap_sticky_small_summary() {

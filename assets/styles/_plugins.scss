@@ -204,3 +204,27 @@ p.demo_store {
         }
     }
 }
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2),
+.woocommerce div.product div.images .flex-control-thumbs li {
+    display: none;
+    @include breakpoint(md) {
+        display: block;
+        width: 100%;
+    }
+}
+.woocommerce div.product div.images .flex-control-thumbs li:first-of-type {
+
+    @include breakpoint(md) {
+        display:none;
+    }
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li img {
+    opacity: 1;
+    cursor: default;
+}

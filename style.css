@@ -3475,6 +3475,71 @@ p.demo_store {
 	top: 64px;
 }
 
+.woocommerce div.product div.images .woocommerce-product-gallery__image:first-of-type {
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2),
+.woocommerce div.product div.images .flex-control-thumbs li {
+	display: none;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li img {
+	opacity: 1;
+	cursor: default;
+}
+
+ul.flex-direction-nav {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	z-index: 99999;
+	width: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li.flex-nav-prev {
+	float: left;
+}
+
+li.flex-nav-next {
+	float: right;
+}
+
+a.flex-next {
+	visibility: hidden;
+}
+
+a.flex-prev {
+	visibility: hidden;
+}
+
+a.flex-next::after {
+	visibility: visible;
+	content: '\f345';
+	font-family: dashicons;
+	margin-right: 10px;
+	margin-right: 1rem;
+	font-size: 40px;
+	font-size: 4rem;
+}
+
+a.flex-prev::before {
+	visibility: visible;
+	content: '\f341';
+	font-family: dashicons;
+	margin-left: 10px;
+	margin-left: 1rem;
+	font-size: 40px;
+	font-size: 4rem;
+}
+
 /* ## Front Page
 --------------------------------------------- */
 .home .site-inner {
@@ -4765,6 +4830,12 @@ p.demo_store {
 	.woocommerce-demo-store .page-header {
 		padding-top: 24rem;
 	}
+	a.flex-next::after {
+		font-size: 7rem;
+	}
+	a.flex-prev::before {
+		font-size: 7rem;
+	}
 	.front-page-1 .widget {
 		max-width: 48em;
 		margin-left: auto;
@@ -5084,6 +5155,17 @@ p.demo_store {
 	}
 	.footer-widgets {
 		padding: 10rem 0;
+	}
+	.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2),
+	.woocommerce div.product div.images .flex-control-thumbs li {
+		display: block;
+		width: 100%;
+	}
+	.woocommerce div.product div.images .flex-control-thumbs li:first-of-type {
+		display: none;
+	}
+	ul.flex-direction-nav {
+		display: none;
 	}
 	.front-page-1,
 	.front-page-2,

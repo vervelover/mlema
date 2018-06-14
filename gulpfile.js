@@ -47,7 +47,7 @@ var paths = {
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
 	scripts: ['assets/scripts/*.js', '!assets/scripts/min/'],
 	woo:     ['assets/styles/woocommerce.scss'],
-	styles:  ['assets/styles/*.scss', '!assets/styles/min/']
+	styles:  ['assets/styles/*.scss', 'assets/styles/components/*.scss', '!assets/styles/min/']
 };
 
 /**
