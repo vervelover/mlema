@@ -129,23 +129,31 @@
             transition: none;
             position: relative;
 
+            & .product-loop-wrap {
+                background: $white;
+            }
+
             & .product-loop-details {
                 @include clearfix;
-                position: absolute;
                 overflow: hidden;
                 z-index: 10;
                 width: 100%;
                 bottom: -13.8rem;
                 background-color: $white;
                 display: none;
-                padding-bottom: 1rem;
             }
 
             @include breakpoint(sm) {
                 margin-bottom: 3rem;
             }
             &:hover {
-                box-shadow: 0 2rem 2rem -1rem rgba($dark,0.1);
+
+                & .product-loop-wrap {
+                    position: absolute;
+                    top: 0;
+                    box-shadow: 0 2rem 2rem rgba( $dark, 0.8);
+                    z-index: 15;
+                }
 
                 & .product-loop-details {
                     display: inline-block;

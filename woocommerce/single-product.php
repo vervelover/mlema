@@ -49,7 +49,6 @@ add_action( 'wp_enqueue_scripts', 'ap_sticky_small_summary' );
 function ap_sticky_small_summary() {
 	wp_enqueue_script( 'sticky-summary', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/sticky-summary.min.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'div-toggle', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/div-toggle.min.js', array( 'jquery' ), '1.0.1' );
-
 }
 
 // div inside summary

@@ -22,9 +22,11 @@ li.flex-nav-next {
 }
 a.flex-next {
     visibility:hidden;
+    text-decoration: none;
 }
 a.flex-prev {
     visibility:hidden;
+    text-decoration: none;
 }
 a.flex-next::after {
     visibility:visible;

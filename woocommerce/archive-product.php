@@ -33,13 +33,17 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+add_action('woocommerce_before_shop_loop_item', 'ap_product_wrap', 5);
+function ap_product_wrap() {
+	echo "<div class='product-loop-wrap'>";
+}
 add_action('woocommerce_shop_loop_item_title', 'ap_product_loop_details_opening', 5);
 function ap_product_loop_details_opening() {
 	echo "<div class='product-loop-details'>";
 }
 add_action('woocommerce_after_shop_loop_item', 'ap_product_loop_details_opening', 90);
 function ap_product_loop_details_closing() {
-	echo "</div'>";
+	echo "</div'></div>";
 }
 
 

@@ -14,5 +14,4 @@ jQuery(document).ready(function($){
             $(".option-content").hide();
             $(".option-heading").find(".arrow-up, .arrow-down").toggle();
     });
-
 });
