@@ -33,6 +33,7 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+/* Add divs for hover fx */
 add_action('woocommerce_before_shop_loop_item', 'ap_product_wrap', 5);
 function ap_product_wrap() {
 	echo "<div class='product-loop-wrap'>";
@@ -45,7 +46,6 @@ add_action('woocommerce_after_shop_loop_item', 'ap_product_loop_details_opening'
 function ap_product_loop_details_closing() {
 	echo "</div'></div>";
 }
-
 
 /** Get Shop Page ID */
 // @TODO Retained for backwards compatibility with < 1.6.0 WooC installs

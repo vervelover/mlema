@@ -976,7 +976,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 .woocommerce ul.products li.product:hover .product-loop-wrap {
 	position: absolute;
 	top: 0;
-	box-shadow: 0 2rem 2rem rgba(49, 42, 45, 0.8);
+	box-shadow: 0.2rem 2rem 2rem rgba(49, 42, 45, 0.4);
 	z-index: 15;
 }
 

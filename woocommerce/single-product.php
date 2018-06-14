@@ -36,7 +36,6 @@ add_theme_support( 'wc-product-gallery-slider' );
 add_filter( 'woocommerce_single_product_carousel_options', 'ap_update_woo_flexslider_options' );
 
 function ap_update_woo_flexslider_options( $options ) {
-
 	/* properties here: https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties */
     $options['directionNav'] = true;
     $options['touch'] = true;
