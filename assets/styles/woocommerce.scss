@@ -149,6 +149,7 @@
             &:hover {
 
                 & .product-loop-wrap {
+                    transition: $site-transition;
                     position: absolute;
                     top: 0;
                     box-shadow: .2rem 2rem 2rem rgba( $dark, 0.4);
@@ -410,6 +411,11 @@
 	& .option-content h2, .option-content-first h2 {
 		display: none;
 	}
+	& .option-content, .option-content-first {
+		font-size: 1.6rem;
+        padding-left: 3.2rem;
+        padding-right: 3.2rem;
+	}
 
     & .arrow-down, .arrow-up, .arrow-up-nojquery {
         float: right;
@@ -540,6 +546,7 @@
                     display: block;
                     width: 100%;
                     padding: 1em;
+                    font-size: 2rem;
                 }
             }
         }
@@ -598,37 +605,49 @@
         line-height: 1.75;
         td {
             font-size: 1.8rem;
-            padding: 10px 12px;
+            padding: 1rem 1.2rem;
         }
         .product-thumbnail {
-            min-width: 56px;
+            min-width: 5.6rem;
         }
         th.product-name {
-            min-width: 140px;
+            min-width: 14rem;
         }
         th.product-price,
         th.product-quantity,
         th.product-subtotal {
-            min-width: 110px;
+            min-width: 11rem;
         }
     }
     td.product-name dl.variation dd {
-        margin-left: 20px;
+        margin-left: 2rem;
     }
     .cart-collaterals {
         padding-top: 1em;
+        .cart_totals {
+            width: 100%;
+            @include breakpoint(md) {
+                width: 48%;
+            }
+        }
         .cart_totals tr {
             th,
             td {
                 border-color: $border;
-                border-width: 2px;
             }
         }
     }
+    & .wc-proceed-to-checkout a.checkout-button.button.alt {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            font-size: 2rem;
+            font-family: $font-body;
+    }
+
 }
 
 .woocommerce-checkout-review-order-table th.product-total {
-    min-width: 110px;
+    min-width: 11rem;
 }
 
 
@@ -1039,4 +1058,9 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 .related.products {
     margin-top: 3rem;
     float: left;
+    & h2 {
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 4rem;
+    }
 }
