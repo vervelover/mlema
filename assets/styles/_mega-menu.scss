@@ -218,7 +218,10 @@
   border-radius: 0px 0px 0 0;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-menu-item {
-  position: static;
+  position: relative;
+  @include breakpoint(md) {
+    position: static;
+  }
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item {
   margin: 0 0px 0 0;
@@ -283,8 +286,11 @@
   -o-border-radius: 0px 0px 0px 0px;
   border-radius: 0px 0px 0px 0px;
   font-family: inherit;
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   letter-spacing: -1px;
+  @include breakpoint(md) {
+    font-size: 1.3rem;
+  }
 }
 @media only screen and (min-width: 57em) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-multi-line > a.mega-menu-link {
@@ -585,9 +591,13 @@
   max-width: none;
   left: 0;
   box-shadow: 0 5px 20px rgba( $dark, 0.2 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #mega-menu-wrap-primary ul#mega-menu-primary > li.mega-menu-item {
-    background-color: $black;
+    background-color: transparent;
+    position: relative;
     &:hover {
         background-color: rgba( $dark, .5 );
     }
@@ -935,12 +945,19 @@
   content: '\f140';
   display: inline-block;
   font-family: dashicons;
-  margin: 0 0 0 .6rem;
+  margin: 0;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transform: rotate(0);
+  right: 0;
   color: inherit;
+  position: absolute;
+  @include breakpoint(md) {
+    margin: 0 0 0 .6rem;
+    position: relative;
+    transform: translateX(0);
+  }
 }
 @media only screen and (max-width: 56em) {
    #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link:after {
@@ -1148,4 +1165,8 @@
 }
 #mega-menu-wrap-primary {
   clear: both;
+  padding-top: 6rem;
+  @include breakpoint(md) {
+    padding-top: 0;
+  }
 }

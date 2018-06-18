@@ -344,9 +344,15 @@
     &__logo  {
         position: absolute;
         z-index: 10;
-        left: 0;
-        top: 1rem;
+        left: 5vw;
+        top: 50%;
+        transform: translateY(-50%);
         width: 4.4rem;
+        @include breakpoint(md) {
+            top: 1rem;
+            left: 0;
+            transform: translateY(0);
+        }
     }
 
 }

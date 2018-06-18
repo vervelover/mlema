@@ -139,25 +139,30 @@
                 z-index: 10;
                 width: 100%;
                 bottom: -13.8rem;
+                padding-bottom: .7rem;
                 background-color: $white;
-                display: none;
+                @include breakpoint(md) {
+                    display: none;
+                }
             }
 
             @include breakpoint(sm) {
                 margin-bottom: 3rem;
             }
             &:hover {
+                
+                @include breakpoint(md) {
+                    & .product-loop-wrap {
+                        transition: $site-transition;
+                        position: absolute;
+                        top: 0;
+                        box-shadow: .2rem 2rem 2rem rgba( $dark, 0.4);
+                        z-index: 15;
+                    }
 
-                & .product-loop-wrap {
-                    transition: $site-transition;
-                    position: absolute;
-                    top: 0;
-                    box-shadow: .2rem 2rem 2rem rgba( $dark, 0.4);
-                    z-index: 15;
-                }
-
-                & .product-loop-details {
-                    display: inline-block;
+                    & .product-loop-details {
+                        display: inline-block;
+                    }
                 }
             }
             &:before,
@@ -285,7 +290,10 @@
             margin-bottom: 1rem;
             color: $accent;
             line-height: 1.5;
-            float: left;
+            float: none;
+            @include breakpoint(md){
+                float: left;
+            }
         }
         .product_meta {
             font-size: 1.5rem;
@@ -320,6 +328,10 @@
     float: left;
     padding-top: 3rem;
     top: 0;
+    text-align: center;
+    @include breakpoint(md){
+        text-align: left;
+    }
 }
 
 #small-summary {
@@ -333,6 +345,12 @@
         &.scroll {
             position: fixed;
             top: 13rem;
+        }
+    }
+    form.cart button {
+        float: none;
+        @include breakpoint(md){
+            float: left;
         }
     }
 
