@@ -110,6 +110,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
+            width: 100%;
+            height: auto;
         }
         &:before,
         &:after {
@@ -150,7 +152,7 @@
                 margin-bottom: 3rem;
             }
             &:hover {
-                
+
                 @include breakpoint(md) {
                     & .product-loop-wrap {
                         transition: $site-transition;

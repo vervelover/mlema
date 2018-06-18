@@ -260,14 +260,14 @@ function ap_checkedbydef() {
 
 // ADD LANGUAGE BODY CLASS
 
-add_filter('body_class', 'wpml_body_class278594');
-function wpml_body_class278594($classes) {
-	if (defined('ICL_LANGUAGE_CODE')) {
-		$classes[] = 'lang-'.ICL_LANGUAGE_CODE;
-	}
-
-	return $classes;
-}
+// add_filter('body_class', 'wpml_body_class278594');
+// function wpml_body_class278594($classes) {
+// 	if (defined('ICL_LANGUAGE_CODE')) {
+// 		$classes[] = 'lang-'.ICL_LANGUAGE_CODE;
+// 	}
+//
+// 	return $classes;
+// }
 
 // REMOVE POSTCODE VALIDATION
 

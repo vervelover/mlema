@@ -2097,6 +2097,8 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 		-webkit-justify-content: flex-start;
 		-ms-flex-pack: start;
 		        justify-content: flex-start;
+		width: 100%;
+		height: auto;
 	}
 	.woocommerce ul.products:before,
 	.woocommerce ul.products:after {

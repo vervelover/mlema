@@ -32,6 +32,12 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+/** Enqueue JS scripts */
+add_action( 'wp_enqueue_scripts', 'ap_ul_products_height' );
+function ap_ul_products_height() {
+	wp_enqueue_script( 'ulProductsfx', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/ulProductsfx.min.js', array( 'jquery' ), '1.0.0' );
+}
+
 /* Add divs for hover fx */
 add_action('woocommerce_before_shop_loop_item', 'ap_product_wrap', 5);
 function ap_product_wrap() {

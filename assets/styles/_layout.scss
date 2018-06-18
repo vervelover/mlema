@@ -11,8 +11,7 @@
 	padding-right: 5%;
 	@include breakpoint(sm) {
 		width: 90%;
-		//max-width: map-get($breakpoints, xl);
-		max-width: 100%;
+		max-width: map-get($breakpoints, xl);
 		padding: 0;
 	}
 	.wrap {
