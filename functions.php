@@ -22,7 +22,7 @@ include_once (get_template_directory().'/lib/init.php');
 // Define theme constants.
 define('CHILD_THEME_NAME', 'Business Pro Theme');
 define('CHILD_THEME_URL', 'https://seothemes.com/themes/business-pro');
-define('CHILD_THEME_VERSION', '1.0.5ab01');
+define('CHILD_THEME_VERSION', '1.0.5ab02');
 
 // Set Localization (do not remove).
 load_child_theme_textdomain('business-pro-theme', apply_filters('child_theme_textdomain', get_stylesheet_directory().'/languages', 'business-pro-theme'));
@@ -302,7 +302,7 @@ function ap_custom_footer() {
 	?>
 			<p>&copy;
 		 Copyright <?php echo date('Y');
-	?><a href="http://maxlemari.com/">Max Lemari</a> &middot;
+	?><a href="<?php site_url(); ?>"> Max Lemari</a> &middot;
 		 All Rights Reserved</p>
 	<?php
 }
