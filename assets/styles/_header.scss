@@ -356,3 +356,24 @@
     }
 
 }
+
+.single-product .content-sidebar-wrap {
+    padding-top: 2.9rem;
+}
+
+.single-product {
+
+    .page-header {
+        padding: 0;
+    }
+
+    .entry-title {
+        color: $gray;
+        font-weight: $thin;
+        font-size: 3.5rem;
+    }
+
+    &::before {
+        display: none;
+    }
+}

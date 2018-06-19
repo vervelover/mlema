@@ -162,6 +162,10 @@ function business_custom_header() {
 
 		$id = get_page_by_path( 'error' );
 
+	} elseif ( is_product() ) {
+
+		return;
+
 	} elseif ( is_singular() ) {
 
 		$id = get_the_id();

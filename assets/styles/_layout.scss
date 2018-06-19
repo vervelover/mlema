@@ -21,6 +21,10 @@
 	}
 }
 
+main {
+	max-width: 100%;
+}
+
 .content-sidebar-wrap {
 	// max-width: map-get($breakpoints, xl);
 	margin: 0 auto;

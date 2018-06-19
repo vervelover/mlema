@@ -982,6 +982,10 @@ th {
 	padding: 0;
 }
 
+main {
+	max-width: 100%;
+}
+
 .content-sidebar-wrap {
 	margin: 0 auto;
 	clear: both;
@@ -1595,6 +1599,26 @@ img.alignright,
 	        transform: translateY(-50%);
 	width: 38.72px;
 	width: 4.4rem;
+}
+
+.single-product .content-sidebar-wrap {
+	padding-top: 25.52px;
+	padding-top: 2.9rem;
+}
+
+.single-product .page-header {
+	padding: 0;
+}
+
+.single-product .entry-title {
+	color: #4c484a;
+	font-weight: 300;
+	font-size: 30.8px;
+	font-size: 3.5rem;
+}
+
+.single-product::before {
+	display: none;
 }
 
 /** Friday 8th June 2018 13:19:12 UTC (core) **/

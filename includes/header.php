@@ -106,13 +106,13 @@ function business_page_title() {
 
 	}
 
-	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+	if ( class_exists( 'WooCommerce' ) && is_search() ) {
 
 		genesis_markup( array(
-			'open'    => '<h1 %s>',
+			'open'    => '<h1>' . apply_filters( 'genesis_search_title_text', __( 'Search results for: ', 'business-pro-theme' ) ),
 			'close'   => '</h1>',
-			'content' => get_the_title( wc_get_page_id( 'shop' ) ),
-			'context' => 'archive-title',
+			'content' => get_search_query(),
+			'context' => 'entry-title',
 		) );
 
 	} elseif ( 'posts' === get_option( 'show_on_front' ) && is_home() ) {
@@ -133,13 +133,13 @@ function business_page_title() {
 			'context' => 'entry-title',
 		) );
 
-	} elseif ( is_search() ) {
+	} elseif ( is_shop() ) {
 
 		genesis_markup( array(
 			'open'    => '<h1 %s>',
 			'close'   => '</h1>',
-			'content' => apply_filters( 'genesis_search_title_text', __( 'Search results for: ', 'business-pro-theme' ) ) . get_search_query(),
-			'context' => 'entry-title',
+			'content' => get_the_title( wc_get_page_id( 'shop' ) ),
+			'context' => 'archive-title',
 		) );
 
 	} elseif ( is_page_template( 'page_blog.php' ) ) {

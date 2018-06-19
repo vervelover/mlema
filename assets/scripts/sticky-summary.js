@@ -3,10 +3,13 @@ jQuery(document).ready(function($){
 	var parentwidth = $(".summary").width();
 	$("#small-summary").width(parentwidth);
 
+	var headerHeight = $(".site-header").height();
+	$("#page-header").height(headerHeight);
+
 	// Add reveal class to sticky message after 129px
 	$(document).on("scroll", function(){
 
-		if($(document).scrollTop() > 350){
+		if($(document).scrollTop() > 35){
 
 			$("#small-summary").addClass("scroll");
 
@@ -17,6 +20,17 @@ jQuery(document).ready(function($){
 		}
 
 
+	});
+
+	$( window ).resize(function() {
+		var headerHeight = $(".site-header").height();
+	    $("#page-header").height(headerHeight);
+
+	    var parentwidth = $(".summary").width();
+  	    $("#small-summary").width(parentwidth);
+
+	    var galleryWidth = $(".woocommerce-product-gallery").width();
+  	    $(".woocommerce-product-gallery img").width(galleryWidth);
 	});
 
 
@@ -42,5 +56,5 @@ jQuery(document).ready(function($){
 		}
 
 	});
-	
+
 });

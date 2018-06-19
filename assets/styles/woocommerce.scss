@@ -288,9 +288,9 @@
         p.price,
         span.price {
             font-family: $font-heading;
-            font-size: 2em;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            color: $accent;
+            color: $gray;
             line-height: 1.5;
             float: none;
             @include breakpoint(md){

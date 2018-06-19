@@ -1117,10 +1117,11 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
 	font-family: 'Work Sans', sans-serif;
-	font-size: 2em;
+	font-size: 48px;
+	font-size: 3rem;
 	margin-bottom: 16px;
 	margin-bottom: 1rem;
-	color: #1c1313;
+	color: #4c484a;
 	line-height: 1.5;
 	float: none;
 }
