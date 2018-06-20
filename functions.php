@@ -215,6 +215,11 @@ function business_scripts_styles() {
 	// Enqueue responsive menu script.
 	wp_enqueue_script('business-menu', get_stylesheet_directory_uri().'/assets/scripts/min/menus.min.js', array('jquery'), CHILD_THEME_VERSION, true);
 
+	// Enqueue ul products js fix
+	if ( is_shop() || is_product_category() || is_product_tag() || is_search() ) {
+		wp_enqueue_script( 'ulProductsfx', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/ulProductsfx.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	}
+
 	// Localize responsive menus script.
 	wp_localize_script('business-menu', 'genesis_responsive_menu', array(
 			'mainMenu'         => __('Menu', 'business-pro-theme'),
