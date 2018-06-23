@@ -1116,6 +1116,8 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	color: #4c484a;
 	margin-bottom: 16px;
 	margin-bottom: 1rem;
+	font-size: 25.6px;
+	font-size: 1.6rem;
 }
 
 .woocommerce div.product p.price,
