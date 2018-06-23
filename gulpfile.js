@@ -26,6 +26,7 @@ var	args         = require('yargs').argv,
 	cssnano      = require('gulp-cssnano'),
 	filter       = require('gulp-filter'),
 	imagemin     = require('gulp-imagemin'),
+	imageResize  = require('gulp-image-resize'),
 	notify       = require('gulp-notify'),
 	pixrem       = require('gulp-pixrem'),
 	plumber      = require('gulp-plumber'),
@@ -38,7 +39,9 @@ var	args         = require('yargs').argv,
 	uglify       = require('gulp-uglify'),
 	wpPot        = require('gulp-wp-pot'),
 	zip          = require('gulp-zip'),
-	focus        = require('postcss-focus');
+	focus        = require('postcss-focus'),
+	parallel 	 = require("concurrent-transform"),
+	os 			 = require("os");
 
 // Set assets paths.
 var paths = {
@@ -46,7 +49,7 @@ var paths = {
 	images:  ['assets/images/*', '!assets/images/*.svg'],
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
 	scripts: ['assets/scripts/*.js', '!assets/scripts/min/'],
-	woo:     ['assets/styles/woocommerce.scss'],
+	woo:     ['assets/styles/woocommerce.scss', 'assets/styles/_woolayout.scss'],
 	styles:  ['assets/styles/*.scss', 'assets/styles/components/*.scss', '!assets/styles/min/']
 };
 
@@ -261,6 +264,13 @@ gulp.task('scripts', function () {
  *
  * https://www.npmjs.com/package/gulp-imagemin
  */
+gulp.task("parallel", function () {
+ 	gulp.src('toresize/*')
+ 	.pipe(parallel(
+ 		imageResize({ format: 'jpeg', width : 2048, height: 1536, crop: true, upscale: false })
+ 	))
+ 	.pipe(gulp.dest("dist"))
+});
 gulp.task('images', function () {
 
 	return gulp.src(paths.images)

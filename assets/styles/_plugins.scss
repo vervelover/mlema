@@ -224,6 +224,20 @@ p.demo_store {
     }
 }
 
+.flex-viewport {
+    @include breakpoint(md) {
+        height: auto !important;
+    }
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+    @include breakpoint(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
 .woocommerce div.product div.images .flex-control-thumbs li img {
     opacity: 1;
     cursor: default;

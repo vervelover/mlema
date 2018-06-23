@@ -109,9 +109,9 @@
         @include breakpoint(sm) {
             display: flex;
             flex-wrap: wrap;
+            flex-basis: max-content;
             justify-content: flex-start;
-            width: 100%;
-            height: auto;
+            min-width: 100%;
         }
         &:before,
         &:after {
@@ -121,7 +121,7 @@
         }
         li.product {
             display: flex;
-            flex-wrap: wrap;
+            flex-basis: max-content;
             align-items: center;
             justify-content: center;
             box-shadow: none;
@@ -153,17 +153,21 @@
             }
             &:hover {
 
+                @include flexfix;
+
                 @include breakpoint(md) {
                     & .product-loop-wrap {
+
                         transition: $site-transition;
                         position: absolute;
                         top: 0;
                         box-shadow: .2rem 2rem 2rem rgba( $dark, 0.4);
                         z-index: 15;
+
                     }
 
                     & .product-loop-details {
-                        display: inline-block;
+                        display: block;
                     }
                 }
             }
@@ -406,7 +410,10 @@
     @include breakpoint(md) {
 		max-width: 48%;
 		padding: 0;
-	}
+    }
+    @include breakpoint(lg) {
+        margin-left: 5%;
+    }
 
 	& .option-heading {
 		border-top: 1px solid $border;

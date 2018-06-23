@@ -60,8 +60,11 @@
         }
         .widget-wrap {
             p {
-                color: $border;
+                color: $white;
                 margin-bottom: 1.618em;
+                font-size: 2.2rem;
+                font-weight: $normal;
+                text-shadow: $heading-shadow;
             }
         }
     }
@@ -87,12 +90,19 @@
         margin-left: -1.5rem; // Lineawesome fix.
     }
     .widget-title {
-        font-size: 2rem;
-        margin: 1rem auto;
+        font-size: 3.5rem;
+        color: $gray;
+        margin: 0 auto;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+    }
+    img {
+        clip-path: circle(38% at 50% 50%);
     }
     p {
         color: $gray;
         display: block;
+        font-weight: $normal;
         @include breakpoint(sm) {
             padding: 0 1em;
             font-size: 1.8rem;
@@ -104,7 +114,6 @@
         }
     }
 }
-
 
 /* ### Front Page 3 */
 
@@ -199,6 +208,17 @@
         &:hover {
             box-shadow: 0px 27px 40px -20px rgba($dark,0.22);
         }
+    }
+    .woocommerce ul.products li.product .price, .woocommerce ul.products li.product .button {
+        display: none;
+    }
+    .woocommerce ul.products li.product .woocommerce-loop-product__title {
+        padding: 3rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .woocommerce ul.products li.product a img {
+        margin-bottom: 0;
     }
 }
 

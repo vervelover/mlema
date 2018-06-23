@@ -9,11 +9,6 @@
  */
 
 $breakpoints: (
-	// xs: 512px,
-	// sm: 768px,
-	// md: 896px,
-	// lg: 1152px,
-	// xl: 1280px
 	xs: 32em,
 	sm: 48em,
 	md: 56em,
@@ -31,7 +26,7 @@ $medium:  #e6e6e6;
 $border:  rgba($medium, .5);
 $light:   #f4f4f4;
 $white:   #ffffff;
-$overlay: rgba(0, 0, 0, .1);
+$overlay: rgba(0, 0, 0, 0.1);
 
 /* ### Typography */
 
@@ -47,10 +42,11 @@ $bold:    	   700;
 $site-radius:     3px;
 $site-border:     1px solid $border;
 $site-transition: 0.75s cubic-bezier(0, 1, 0.5, 1);
+$heading-shadow:  0 0.5rem 2rem rgba(0, 0, 0, .7);
 
 /* ### Column widths */
 
-$margin-left:   .7rem;
+$margin-left:   7px;
 
 $one-half :     calc((100% - #{$margin-left}) / 2);
 $one-third:     calc((100% - 2 * #{$margin-left}) / 3);

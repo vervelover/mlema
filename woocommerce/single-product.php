@@ -18,7 +18,7 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wr
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
 /** Custom FlexSlider Navigation **/
-
+add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 // Update WooCommerce Flexslider options
 
@@ -27,6 +27,7 @@ add_filter( 'woocommerce_single_product_carousel_options', 'ap_update_woo_flexsl
 function ap_update_woo_flexslider_options( $options ) {
 	/* properties here: https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties */
     $options['directionNav'] = true;
+    $options['controlNav'] = false;
     $options['touch'] = true;
 
     return $options;

@@ -37,7 +37,10 @@
     "postcss-focus": "*",
     "yargs": "^9.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-image-resize": "^0.13.0",
+    "gulp-images-convert": "^1.0.1"
+  },
   "scripts": {
     "test": "echo \"No test specified\""
   },

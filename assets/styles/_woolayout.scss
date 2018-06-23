@@ -46,13 +46,22 @@
 	/**
 	 * Product page
 	 */
-	div.product,
+	div.entry.product,
 	#content div.product {
+
 		div.images {
 			width: 100%;
 			float: left;
 			@include breakpoint(md) {
-				max-width: 48%;
+				max-width: 58%;
+			}
+			@include breakpoint(lg) {
+				padding-right: 3%;
+				padding-left: 3%;
+			}
+			@include breakpoint(xl) {
+				padding-right: 5%;
+				padding-left: 5%;
 			}
 		}
 
@@ -106,7 +115,7 @@
 			width: 100%;
 			clear: none;
 			@include breakpoint(md) {
-				width: 48%;
+				width: 38%;
 			}
 		}
 

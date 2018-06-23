@@ -22,7 +22,7 @@ include_once (get_template_directory().'/lib/init.php');
 // Define theme constants.
 define('CHILD_THEME_NAME', 'Business Pro Theme');
 define('CHILD_THEME_URL', 'https://seothemes.com/themes/business-pro');
-define('CHILD_THEME_VERSION', '1.0.5ab02');
+define('CHILD_THEME_VERSION', '1.0.5ab03');
 
 // Set Localization (do not remove).
 load_child_theme_textdomain('business-pro-theme', apply_filters('child_theme_textdomain', get_stylesheet_directory().'/languages', 'business-pro-theme'));
@@ -185,9 +185,10 @@ add_action('wp_enqueue_scripts', 'business_scripts_styles', 20);
  */
 function business_scripts_styles() {
 
-	// Remove Simple Social Icons CSS (included with theme).
+	// Remove Simple Social Icons CSS (included with theme) and some Woocommerce styles
 	wp_dequeue_style('simple-social-icons-font');
 	wp_dequeue_style('woocommerce-layout');
+	wp_dequeue_style('woocommerce');
 
 	// Enqueue Google fonts.
 	wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Work+Sans:300,400,600,700', array(), CHILD_THEME_VERSION);
@@ -255,14 +256,6 @@ include_once (get_stylesheet_directory().'/includes/defaults.php');
 // Load theme's recommended plugins.
 include_once (get_stylesheet_directory().'/includes/plugins.php');
 
-// TERMS AND CONDITIONS CHECKED BY DEFAULT
-
-add_filter('woocommerce_terms_is_checked_default', 'ap_checkedbydef');
-
-function ap_checkedbydef() {
-	return true;
-}
-
 // ADD LANGUAGE BODY CLASS
 
 // add_filter('body_class', 'wpml_body_class278594');
@@ -314,23 +307,23 @@ function ap_custom_footer() {
 
 // CUSTOMIZE WOOCOMMERCE PRODUCT SEARCH
 
-add_filter('get_product_search_form', 'ap_custom_product_searchform');
+// add_filter('get_product_search_form', 'ap_custom_product_searchform');
 /**
  * Filter WooCommerce  Search Field
  *
  */
-function ap_custom_product_searchform($form) {
-
-	$form = '<form class="product-search" role="search" method="get" id="searchform" action="'.esc_url(home_url('/')).'">
-                    <label class="screen-reader-text" for="s">'.__('Search for:', 'woocommerce').'</label>
-                    <input class="product-search__input" type="text" value="'.get_search_query().'" name="s" id="s" placeholder="'.__('Search products', 'woocommerce').'" />
-					<button class="product-search__button" for="s" class="search__button" type="submit" value="'.esc_attr__('Search', 'woocommerce').'" name="button">
-				       	<i class="product-search__icon fa fa-search"></i>
-				    </button>
-                    <input type="hidden" name="post_type" value="product" />
-                </form>';
-	return $form;
-}
+// function ap_custom_product_searchform($form) {
+//
+// 	$form = '<form class="product-search" role="search" method="get" id="searchform" action="'.esc_url(home_url('/')).'">
+//                     <label class="screen-reader-text" for="s">'.__('Search for:', 'woocommerce').'</label>
+//                     <input class="product-search__input" type="text" value="'.get_search_query().'" name="s" id="s" placeholder="'.__('Search products', 'woocommerce').'" />
+// 					<button class="product-search__button" for="s" class="search__button" type="submit" value="'.esc_attr__('Search', 'woocommerce').'" name="button">
+// 				       	<i class="product-search__icon fa fa-search"></i>
+// 				    </button>
+//                     <input type="hidden" name="post_type" value="product" />
+//                 </form>';
+// 	return $form;
+// }
 
 // ADD SEARCH BOX AND CART TO HEADER RIGHT MENU
 
@@ -364,14 +357,17 @@ function ap_add_search_and_cart_to_menu($items, $args) {
 
 		// no cart items count if cart is empty
 		if ($cart_item['cart_contents_count'] == 0) {
-			return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i>".$cart_item['cart_name']."</a></li><li class='menu-header-search'>".$woosearchform."</li>";
+			return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i>".$cart_item['cart_name']."</a></li>";
+			// return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i>".$cart_item['cart_name']."</a></li><li class='menu-header-search'>".$woosearchform."</li>";
 		} else {
-			return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i><span class='cart-count'>".$cart_item['cart_contents_count']."</span>".$cart_item['cart_name']."</a></li><li class='menu-header-search'>".$woosearchform."</li>";
+			return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i><span class='cart-count'>".$cart_item['cart_contents_count']."</span>".$cart_item['cart_name']."</a></li>";
+			// return $items."<li class='menu-item header-cart-menu'><a href='".$cart_item['cart_url']."'><i class='fa fa-shopping-cart'></i><span class='cart-count'>".$cart_item['cart_contents_count']."</span>".$cart_item['cart_name']."</a></li><li class='menu-header-search'>".$woosearchform."</li>";
 		}
 
 	} else if ($args->theme_location == 'top-menu' && is_cart()) {
 
-		return $items."<li class='menu-item menu-header-search'>".$woosearchform."</li></li>";
+		return $items;
+		// return $items."<li class='menu-item menu-header-search'>".$woosearchform."</li></li>";
 
 	}
 
@@ -390,16 +386,16 @@ function remove_admin_bar() {
 
 // new item badge
 
-add_action('woocommerce_before_shop_loop_item_title', 'ap_woocommerce_show_product_loop_new_badge');
-
-function ap_woocommerce_show_product_loop_new_badge() {
-	$postdate      = get_the_time('Y-m-d');// Post date
-	$postdatestamp = strtotime($postdate);// Timestamped post date
-	// Newness is the last number
-	if ((time()-(60*60*24*30)) < $postdatestamp) {// If the product was published within the newness time frame display the new badge
-		echo '<p class="wc-new-badge"><span>'.__('New', 'wc-new-badge').'</span></p>';
-	}
-}
+// add_action('woocommerce_before_shop_loop_item_title', 'ap_woocommerce_show_product_loop_new_badge');
+//
+// function ap_woocommerce_show_product_loop_new_badge() {
+// 	$postdate      = get_the_time('Y-m-d');// Post date
+// 	$postdatestamp = strtotime($postdate);// Timestamped post date
+// 	// Newness is the last number
+// 	if ((time()-(60*60*24*30)) < $postdatestamp) {// If the product was published within the newness time frame display the new badge
+// 		echo '<p class="wc-new-badge"><span>'.__('New', 'wc-new-badge').'</span></p>';
+// 	}
+// }
 
 // logo in heaeder
 
