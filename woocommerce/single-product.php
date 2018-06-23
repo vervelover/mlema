@@ -76,7 +76,6 @@ add_filter( 'woocommerce_product_tabs', 'ap_remove_woocommerce_product_tabs', 98
 add_action( 'woocommerce_after_single_product_summary', 'ap_custom_woocommerce_product_description_tab' );
 /*add_action( 'woocommerce_after_single_product_summary', 'ap_custom_comments_template' );*/
 function ap_custom_woocommerce_product_description_tab() {
-	echo '<div id="stop-summary" style="width:100%;display:block;float:left;clear:both;"></div>';
 	echo '<div class="single-product-additional-info">';
 		echo '<div class="option-heading"><h2>'; _e('Product Description', 'business-pro'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
 			echo '<div id="single-product-description">';
@@ -92,7 +91,37 @@ function ap_custom_woocommerce_product_description_tab() {
     			echo '</div>';
     		echo '</div>';
         }
-	echo '</div>';
+        echo '<div id="stop-summary" style="width:100%;display:block;float:left;clear:both;"></div>';
+        echo '<div class="option-heading"><h2>'; _e('Shipping', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
+            echo '<div id="single-product-description">';
+                ?>
+                <p>We charge 15€ to US, UK, EU and Canada. No extra rates will be added. We offer Express shipping with all orders. From the moment the order leaves our warehouse, we deliver in 3-4 business days.</p>
+                <p>All orders are processed Monday through Saturday, excluding Sunday and holidays. US & Canadian customers will not pay any duties.</p>
+                <p>From March 10, 2016 a new commercial agreement was made with the EU: orders under 800$ value will be delivered directly to you duty free.</p>
+                <p>For the rest of the world we charge 25€, duties and local taxes will be charged by the appropriate authority at the destination country. Please determine these charges locally.</p>
+                <?php
+            echo '</div>';
+        echo '</div>';
+        echo '<div class="option-heading"><h2>'; _e('Returns and Exchanges', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
+            echo '<div id="single-product-description">';
+                ?>
+                <p>For online purchases, Max Lemari will refund the purchase price of merchandise that is returned in its original condition and accompanied by the original invoice, original Gucci packaging and security return/exchange label intact and attached to the item. Customized products can be returned with a 20€ penalty.</p>
+                <p>You must inform Max Lemari of your intention to return the merchandise within 14 days of the date of delivery by (i) directly returning the merchandise to Max Lemari; or (ii) writing your intention to info@maxlemari.com
+                We are a startup and work with almost no margins on Kickstarter. If the need for an exchange arises, we will need to charge for the shipping both ways. Choose your size carefully and read our sizing guidelines.</p>
+                <?php
+            echo '</div>';
+        echo '</div>';
+        echo '<div class="option-heading"><h2>'; _e('Payment Options', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
+            echo '<div id="single-product-description">';
+                ?>
+                <p>Max Lemari accepts the following forms of payment for online purchases: Visa, Mastercard, American Express and PAYPAL.</p>
+                <p>For credit card payments, please note that your billing address must match the address on your credit card statement.</p>
+                <p>The authorized amount will be released by your credit card’s issuing bank according to its policy.</p>
+                <p>The purchase transaction will only be charged to your credit card after we have verified your card details, received credit authorization for an amount equal to the purchase price of the ordered products, confirmed product availability and prepared your order for shipping.</p>
+                <?php
+            echo '</div>';
+        echo '</div>';
+    echo '</div>';
 }
 
 /** Remove quantity inputs in single products */

@@ -355,6 +355,7 @@
     }
     form.cart button {
         float: none;
+        padding: 2rem 10rem;
         @include breakpoint(md){
             float: left;
         }
@@ -416,10 +417,11 @@
     }
 
 	& .option-heading {
-		border-top: 1px solid $border;
+        border-top: 1px solid $border;
 		display: block;
 		float: left;
 		width: 100%;
+        text-transform: uppercase;
 		cursor: pointer;
 	}
 
@@ -432,7 +434,7 @@
 		position: relative;
 		left: 0;
 		display: inline-block;
-		color: $gray;
+		color: $black;
 	}
 
 	& .option-content h2, .option-content-first h2 {
@@ -442,6 +444,7 @@
 		font-size: 1.6rem;
         padding-left: 3.2rem;
         padding-right: 3.2rem;
+        padding-bottom: 3.2rem;
 	}
 
     & .arrow-down, .arrow-up, .arrow-up-nojquery {

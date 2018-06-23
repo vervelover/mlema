@@ -1184,6 +1184,8 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 
 #small-summary form.cart button {
 	float: none;
+	padding: 32px 160px;
+	padding: 2rem 10rem;
 }
 
 /* ### WooCommerce Product Tabs */
@@ -1237,6 +1239,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	display: block;
 	float: left;
 	width: 100%;
+	text-transform: uppercase;
 	cursor: pointer;
 }
 
@@ -1251,7 +1254,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	position: relative;
 	left: 0;
 	display: inline-block;
-	color: #4c484a;
+	color: #1c1313;
 }
 
 .single-product-additional-info .option-content h2,
@@ -1267,6 +1270,8 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	padding-left: 3.2rem;
 	padding-right: 51.2px;
 	padding-right: 3.2rem;
+	padding-bottom: 51.2px;
+	padding-bottom: 3.2rem;
 }
 
 .single-product-additional-info .arrow-down,
