@@ -17,6 +17,15 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+/** Change Option select placehoòder to group name (i.e. size) */
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'ap_filter_dropdown_args', 10 );
+function ap_filter_dropdown_args( $args ) {
+    $variation_tax = get_taxonomy( $args['attribute'] );
+    $name = wc_sanitize_taxonomy_name( str_replace( 'pa_', '', $variation_tax->name ) );
+    $args['show_option_none'] = apply_filters( 'the_title', ucfirst($name) );
+    return $args;
+}
+
 /** Custom FlexSlider Navigation **/
 add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
@@ -57,7 +66,21 @@ function ap_small_summary_close_div() {
 	// echo '<a data-rel="prettyPhoto" href="#single-product-reviews">';
 	// woocommerce_template_single_rating();
 	// echo '</a>';
-    echo '</div>';
+	echo '</div>';
+}
+
+add_action('woocommerce_single_product_summary', 'ap_summary_shipping_info', 30);
+function ap_summary_shipping_info() {
+		?>
+        <div class="go-to-details">
+            <a href="#product-details" class="go-to-details--link" title="View Product Details">Product Details <i class="fa fa-angle-right"></i></a>
+        </div>
+		<div class="summary-shipping-info">
+            <ul>
+                <li><?php _e('Free Shipping and Returns', 'business-pro');?></li>
+            </ul>
+        </div>
+		<?php
 }
 
 /**
@@ -76,8 +99,9 @@ add_filter( 'woocommerce_product_tabs', 'ap_remove_woocommerce_product_tabs', 98
 add_action( 'woocommerce_after_single_product_summary', 'ap_custom_woocommerce_product_description_tab' );
 /*add_action( 'woocommerce_after_single_product_summary', 'ap_custom_comments_template' );*/
 function ap_custom_woocommerce_product_description_tab() {
-	echo '<div class="single-product-additional-info">';
-		echo '<div class="option-heading"><h2>'; _e('Product Description', 'business-pro'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
+    echo '<div class="single-product-additional-info">';
+    echo '<div id="product-details" style="position:absolute;top:-10rem;"></div>';
+        echo '<div class="option-heading"><h2>'; _e('Product Description', 'business-pro'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
 			echo '<div id="single-product-description">';
 				woocommerce_product_description_tab();
 			echo '</div>';
@@ -91,7 +115,6 @@ function ap_custom_woocommerce_product_description_tab() {
     			echo '</div>';
     		echo '</div>';
         }
-        echo '<div id="stop-summary" style="width:100%;display:block;float:left;clear:both;"></div>';
         echo '<div class="option-heading"><h2>'; _e('Shipping', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
             echo '<div id="single-product-description">';
                 ?>
@@ -102,7 +125,7 @@ function ap_custom_woocommerce_product_description_tab() {
                 <?php
             echo '</div>';
         echo '</div>';
-        echo '<div class="option-heading"><h2>'; _e('Returns and Exchanges', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
+        echo '<div id="#spedizioni-resi" class="option-heading"><h2>'; _e('Returns and Exchanges', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
             echo '<div id="single-product-description">';
                 ?>
                 <p>For online purchases, Max Lemari will refund the purchase price of merchandise that is returned in its original condition and accompanied by the original invoice, original Gucci packaging and security return/exchange label intact and attached to the item. Customized products can be returned with a 20€ penalty.</p>
@@ -122,6 +145,7 @@ function ap_custom_woocommerce_product_description_tab() {
             echo '</div>';
         echo '</div>';
     echo '</div>';
+    echo '<div id="stop-summary" style="width:100%;float:left;"></div>';
 }
 
 /** Remove quantity inputs in single products */

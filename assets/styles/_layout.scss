@@ -26,7 +26,7 @@ main {
 }
 
 .content-sidebar-wrap {
-	max-width: map-get($breakpoints, xl);
+	max-width: map-get($breakpoints, md);
 	margin: 0 auto;
 	clear: both;
 	padding: 10vw 5vw;
@@ -35,7 +35,7 @@ main {
 	flex-wrap: wrap;
 	flex-direction: column;
 	@include breakpoint(sm) {
-		width: 98%;
+		width: 96%;
 		max-width: map-get($breakpoints, xl);
 		padding: 6rem 0;
 	}

@@ -289,11 +289,33 @@
                 margin-bottom: 1rem;
                 font-size: 1.6rem;
             }
+            p.out-of-stock, p.in-stock {
+                font-weight: $bolder;
+                margin-bottom: 0;
+            }
+            p.in-stock {
+                display: none;
+            }
+            p.out-of-stock {
+                color: tomato;
+            }
+            ul {
+                margin-bottom: 1.6rem;
+            }
+            li {
+                font-size: 1.4rem;
+                list-style-type: disc;
+                margin-left: 1.6rem;
+                margin-top: 1rem;
+                @include breakpoint(md) {
+                    margin-top: 0;
+                }
+            }
         }
         p.price,
         span.price {
             font-family: $font-heading;
-            font-size: 3rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
             color: $gray;
             line-height: 1.5;
@@ -303,14 +325,55 @@
             }
         }
         .product_meta {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: $gray;
         }
         form.cart {
             clear: both;
-            padding: 1em 0 0;
+            padding: .5rem 0 1rem;
+            margin-bottom: 0;
             .variations {
                 table-layout: fixed;
+                td {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    line-height: 1;
+                    padding: 0;
+                    width: 20rem;
+                    margin: 0 auto;
+                    position: relative;
+                    font-size: 1.6rem;
+                    @include breakpoint(md) {
+                        width: 48%;
+                        margin: 0;
+                    }
+                    &::after {
+                        position: absolute;
+                        font-family: dashicons;
+                        content: "\f347";
+                        top: 1.3rem;
+                        right: 1.4rem;
+                        color: $accent;
+                    }
+                }
+                td.label {
+                    display: none;
+                }
+                tbody {
+                    border: none;
+                }
+                select {
+                    border-radius: 0;
+                    appearance: none;
+                    font-size: 1.6rem;
+                }
+                a.reset_variations {
+                    display: none;
+                    margin-top: 0.5em;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                }
             }
         }
     }
@@ -359,7 +422,32 @@
         padding: 2rem 10rem;
         @include breakpoint(md){
             float: left;
+            width: 100%;
         }
+        &.alt.disabled {
+            background-color: $accent;
+            opacity: .8;
+        }
+    }
+    .go-to-details {
+        text-align: center;
+        width: 100%;
+        border-top: $site-border;
+        border-bottom: $site-border;
+        margin-bottom: 1rem;
+        display: none;
+        @include breakpoint(md) {
+            display: block;
+        }
+        &--link {
+            font-size: 1.6rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+
+    li a {
+        text-decoration: none;
     }
 
 }
@@ -405,6 +493,7 @@
 .single-product-additional-info {
 	width: 100%;
 	float: left;
+    position: relative;
 	margin: 2rem 0;
 	border-bottom: 1px solid $border;
 	text-align: left;
@@ -455,6 +544,13 @@
     	font-size: 3.2rem;
     	padding-top: 2.7rem;
     	color: $gray;
+    }
+
+    & li {
+        list-style-type: disc;
+        margin-left: 3.2rem;
+        margin-bottom: 1rem;
+        font-style: italic;
     }
 }
 
@@ -1089,6 +1185,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 .related.products {
     margin-top: 3rem;
     float: left;
+    width: 100%;
     & h2 {
         text-align: center;
         font-size: 4rem;

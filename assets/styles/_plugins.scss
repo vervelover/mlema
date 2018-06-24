@@ -206,7 +206,11 @@ p.demo_store {
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__image:first-of-type {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+.woocommerce-product-gallery__wrapper > * {
+    margin-bottom: 0;
+    transform: translateY(-15%);
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2),

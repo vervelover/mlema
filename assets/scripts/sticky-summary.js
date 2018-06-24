@@ -46,9 +46,9 @@ jQuery(document).ready(function($){
 		// if user has scrolled further than footer,
 		// pull sidebar up using a negative margin
 
-		if (scrolltop > footertotop) {
+		if (scrolltop > footertotop-350) {
 
-		$('#small-summary').css('margin-top',  0-difference);
+		$('#small-summary').css('margin-top',  0-difference-350);
 		}
 
 		else  {

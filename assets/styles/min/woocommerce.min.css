@@ -250,7 +250,7 @@
 .woocommerce #content div.product div.summary,
 .woocommerce-page div.entry.product div.summary,
 .woocommerce-page #content div.product div.summary {
-	float: right;
+	float: left;
 	width: 100%;
 	clear: none;
 }
@@ -1120,11 +1120,40 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	font-size: 1.6rem;
 }
 
+.woocommerce div.product .summary p.out-of-stock,
+.woocommerce div.product .summary p.in-stock {
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.woocommerce div.product .summary p.in-stock {
+	display: none;
+}
+
+.woocommerce div.product .summary p.out-of-stock {
+	color: tomato;
+}
+
+.woocommerce div.product .summary ul {
+	margin-bottom: 25.6px;
+	margin-bottom: 1.6rem;
+}
+
+.woocommerce div.product .summary li {
+	font-size: 22.4px;
+	font-size: 1.4rem;
+	list-style-type: disc;
+	margin-left: 25.6px;
+	margin-left: 1.6rem;
+	margin-top: 16px;
+	margin-top: 1rem;
+}
+
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
 	font-family: 'Work Sans', sans-serif;
-	font-size: 48px;
-	font-size: 3rem;
+	font-size: 36.8px;
+	font-size: 2.3rem;
 	margin-bottom: 16px;
 	margin-bottom: 1rem;
 	color: #4c484a;
@@ -1133,18 +1162,80 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 }
 
 .woocommerce div.product .product_meta {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 19.2px;
+	font-size: 1.2rem;
 	color: #4c484a;
 }
 
 .woocommerce div.product form.cart {
 	clear: both;
-	padding: 1em 0 0;
+	padding: 8px 0 16px;
+	padding: 0.5rem 0 1rem;
+	margin-bottom: 0;
 }
 
 .woocommerce div.product form.cart .variations {
 	table-layout: fixed;
+}
+
+.woocommerce div.product form.cart .variations td {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	        align-items: flex-start;
+	line-height: 1;
+	padding: 0;
+	width: 320px;
+	width: 20rem;
+	margin: 0 auto;
+	position: relative;
+	font-size: 25.6px;
+	font-size: 1.6rem;
+}
+
+.woocommerce div.product form.cart .variations td::after {
+	position: absolute;
+	font-family: dashicons;
+	content: '\f347';
+	top: 20.8px;
+	top: 1.3rem;
+	right: 22.4px;
+	right: 1.4rem;
+	color: #1c1313;
+}
+
+.woocommerce div.product form.cart .variations td.label {
+	display: none;
+}
+
+.woocommerce div.product form.cart .variations tbody {
+	border: none;
+}
+
+.woocommerce div.product form.cart .variations select {
+	border-radius: 0;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	font-size: 25.6px;
+	font-size: 1.6rem;
+}
+
+.woocommerce div.product form.cart .variations a.reset_variations {
+	display: none;
+	margin-top: 0.5em;
+	font-size: 22.4px;
+	font-size: 1.4rem;
+	text-transform: uppercase;
 }
 
 .woocommerce .woocommerce-result-count {
@@ -1190,6 +1281,32 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	padding: 2rem 10rem;
 }
 
+#small-summary form.cart button.alt.disabled {
+	background-color: #1c1313;
+	opacity: 0.8;
+}
+
+#small-summary .go-to-details {
+	text-align: center;
+	width: 100%;
+	border-top: 1px solid rgba(230, 230, 230, 0.5);
+	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+	display: none;
+}
+
+#small-summary .go-to-details--link {
+	font-size: 25.6px;
+	font-size: 1.6rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#small-summary li a {
+	text-decoration: none;
+}
+
 /* ### WooCommerce Product Tabs */
 .woocommerce div.product .woocommerce-tabs ul.tabs {
 	padding-left: 5px;
@@ -1230,6 +1347,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 .single-product-additional-info {
 	width: 100%;
 	float: left;
+	position: relative;
 	margin: 32px 0;
 	margin: 2rem 0;
 	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
@@ -1288,6 +1406,15 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	padding-top: 43.2px;
 	padding-top: 2.7rem;
 	color: #4c484a;
+}
+
+.single-product-additional-info li {
+	list-style-type: disc;
+	margin-left: 51.2px;
+	margin-left: 3.2rem;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+	font-style: italic;
 }
 
 /* Two Sidebar Layouts */
@@ -2045,6 +2172,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	margin-top: 48px;
 	margin-top: 3rem;
 	float: left;
+	width: 100%;
 }
 
 .related.products h2 {
@@ -2140,13 +2268,15 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	.woocommerce #content div.product div.images,
 	.woocommerce-page div.entry.product div.images,
 	.woocommerce-page #content div.product div.images {
-		max-width: 58%;
+		max-width: 62%;
+		margin-right: 3%;
 	}
 	.woocommerce div.entry.product div.summary,
 	.woocommerce #content div.product div.summary,
 	.woocommerce-page div.entry.product div.summary,
 	.woocommerce-page #content div.product div.summary {
-		width: 38%;
+		width: 38rem;
+		max-width: 35%;
 	}
 	.woocommerce ul.products li.product .product-loop-details {
 		display: none;
@@ -2162,9 +2292,16 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	.woocommerce ul.products li.product:hover .product-loop-details {
 		display: block;
 	}
+	.woocommerce div.product .summary li {
+		margin-top: 0;
+	}
 	.woocommerce div.product p.price,
 	.woocommerce div.product span.price {
 		float: left;
+	}
+	.woocommerce div.product form.cart .variations td {
+		width: 48%;
+		margin: 0;
 	}
 	#small-summary,
 	#small-summary.scroll {
@@ -2183,6 +2320,10 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 	#small-summary form.cart button {
 		float: left;
+		width: 100%;
+	}
+	#small-summary .go-to-details {
+		display: block;
 	}
 	.single-product-additional-info {
 		max-width: 48%;
@@ -2282,6 +2423,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	.woocommerce #content div.product div.images,
 	.woocommerce-page div.entry.product div.images,
 	.woocommerce-page #content div.product div.images {
+		max-width: 58%;
 		padding-right: 5%;
 		padding-left: 5%;
 	}

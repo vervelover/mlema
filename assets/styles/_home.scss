@@ -28,7 +28,7 @@
     background-size: cover !important;
     background-position: center !important;
     padding: 0;
-    height: 70vh;
+    height: 100vh;
     position: relative;
     color: $white;
     overflow: hidden;
@@ -38,13 +38,13 @@
     align-items: center;
     align-content: center;
     @include clearfix;
-    @include breakpoint(md) {
-        padding: 0;
-        margin-top: 11.1rem;
-    }
-    @include breakpoint(xl) {
-        height: 70vh;
-    }
+    // @include breakpoint(md) {
+    //     padding: 0;
+    //     margin-top: 11.1rem;
+    // }
+    // @include breakpoint(xl) {
+    //     height: 70vh;
+    // }
     .wrap {
         position: relative;
         z-index: 2;
