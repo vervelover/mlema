@@ -3676,6 +3676,7 @@ a.flex-prev::before {
 
 /* ### Front Page 2 */
 .front-page-2 {
+	background: #f4f4f4;
 	text-align: center;
 }
 
@@ -3706,7 +3707,7 @@ a.flex-prev::before {
 
 /* ### Front Page 3 */
 .front-page-3 {
-	background-color: #f4f4f4;
+	background-color: #ffffff;
 }
 
 .front-page-3 .wrap {
@@ -3744,6 +3745,12 @@ a.flex-prev::before {
 }
 
 .front-page-3 .widget_custom_html:first-of-type p {
+	color: #4c484a;
+}
+
+.front-page-3 h2 {
+	font-size: 40px;
+	font-size: 5rem;
 	color: #4c484a;
 }
 
@@ -3846,25 +3853,9 @@ a.flex-prev::before {
 	box-shadow: 0 27px 40px -20px rgba(49, 42, 45, 0.22);
 }
 
-.front-page-3 .woocommerce ul.products li.product .price,
-.front-page-3 .woocommerce ul.products li.product .button {
-	display: none;
-}
-
-.front-page-3 .woocommerce ul.products li.product .woocommerce-loop-product__title {
-	padding: 24px;
-	padding: 3rem;
-	font-size: 16px;
-	font-size: 2rem;
-	text-align: center;
-}
-
-.front-page-3 .woocommerce ul.products li.product a img {
-	margin-bottom: 0;
-}
-
 /* ### Front Page 4 */
 .front-page-4 {
+	display: none;
 	background-color: #312a2d;
 	position: relative;
 	overflow: hidden;

@@ -85,6 +85,7 @@
 /* ### Front Page 2 */
 
 .front-page-2 {
+    background: $light;
     text-align: center;
     .fa-coffee {
         margin-left: -1.5rem; // Lineawesome fix.
@@ -118,7 +119,7 @@
 /* ### Front Page 3 */
 
 .front-page-3 {
-    background-color: $light;
+    background-color: $white;
     .wrap {
         flex-wrap: wrap;
     }
@@ -147,6 +148,10 @@
         p {
             color: $gray;
         }
+    }
+    h2 {
+        font-size: 5rem;
+        color: $gray;
     }
     p {
         color: $gray;
@@ -209,23 +214,24 @@
             box-shadow: 0px 27px 40px -20px rgba($dark,0.22);
         }
     }
-    .woocommerce ul.products li.product .price, .woocommerce ul.products li.product .button {
-        display: none;
-    }
-    .woocommerce ul.products li.product .woocommerce-loop-product__title {
-        padding: 3rem;
-        font-size: 2rem;
-        text-align: center;
-    }
-    .woocommerce ul.products li.product a img {
-        margin-bottom: 0;
-    }
+    // .woocommerce ul.products li.product .price, .woocommerce ul.products li.product .button {
+    //     display: none;
+    // }
+    // .woocommerce ul.products li.product .woocommerce-loop-product__title {
+    //     padding: 3rem;
+    //     font-size: 2rem;
+    //     text-align: center;
+    // }
+    // .woocommerce ul.products li.product a img {
+    //     margin-bottom: 0;
+    // }
 }
 
 
 /* ### Front Page 4 */
 
 .front-page-4 {
+    display: none;
     background-color: $dark;
     position: relative;
     overflow: hidden;

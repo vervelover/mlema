@@ -37,10 +37,15 @@ genesis_unregister_layout('sidebar-sidebar-content');
 add_filter('widget_text', 'do_shortcode');
 
 // Set hero image size.
-add_image_size('hero', 1280, 720, true);
+add_image_size('hero', 1920, 720, true);
+
+// Set medium image sizes to crop
+update_option( 'medium_size_w', 604 );
+update_option( 'medium_size_h', 404 );
+update_option( 'medium_crop', 1 );
 
 // Set portfolio image size to override plugin.
-add_image_size('portfolio', 620, 380, true);
+// add_image_size('portfolio', 620, 380, true);
 
 // Enable support for page excerpts.
 add_post_type_support('page', 'excerpt');
