@@ -446,6 +446,14 @@
         }
     }
 
+    .summary-shipping-info {
+        display: flex;
+        justify-content: center;
+        @include breakpoint(md) {
+            display: block;
+        }
+    }
+
     li a {
         text-decoration: none;
     }
@@ -1190,5 +1198,12 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
         text-align: center;
         font-size: 4rem;
         margin-bottom: 4rem;
+    }
+    li.product {
+        flex-direction: column;
+        a.button {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
