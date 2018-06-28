@@ -29,7 +29,7 @@ main {
 	max-width: map-get($breakpoints, md);
 	margin: 0 auto;
 	clear: both;
-	padding: 10vw 5vw;
+	padding: 2.9rem 5vw;
 	word-wrap: break-word;
 	display: flex;
 	flex-wrap: wrap;
@@ -37,10 +37,9 @@ main {
 	@include breakpoint(sm) {
 		width: 96%;
 		max-width: map-get($breakpoints, xl);
-		padding: 6rem 0;
+		padding: 2.9rem 0;
 	}
 	@include breakpoint(md) {
-		padding: 5rem 0;
 		flex-direction: row;
 		justify-content: space-between;
 		@include flexfix;

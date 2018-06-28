@@ -180,7 +180,7 @@ function business_custom_header() {
 
 		add_filter( 'body_class', 'ap_no_header_image_body_class' );
 		return;
-		
+
 	} else if ( class_exists( 'WooCommerce' ) && is_product_category() ) {
 
 		global $wp_query;
@@ -190,9 +190,10 @@ function business_custom_header() {
 
 	}
 
-	if ( ! $url ) {
+	if ( ! $url && !is_front_page() ) {
 
-		$url = get_header_image();
+		add_filter( 'body_class', 'ap_no_header_image_body_class' );
+		return;
 
 	}
 

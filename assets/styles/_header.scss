@@ -319,14 +319,17 @@
 
 .page-header {
     color: $white;
-    padding: 12rem 0 6rem;
+    padding: 12vh 0 12vh;
     text-align: center;
     background-size: cover;
     background-position: center;
     position: relative;
     @include overlay;
     @include breakpoint(sm) {
-        padding: 22.2rem 0 11.1rem;
+        padding: 20vh 0 20vh;
+    }
+    @include breakpoint(lg) {
+        padding: 25vh 0 25vh;
     }
     .wrap {
         position: relative;
@@ -340,6 +343,8 @@
     p {
         max-width: map-get($breakpoints,sm);
         margin: 1.3rem auto 0;
+        text-shadow: $heading-shadow;
+        font-weight: $normal;
     }
     &__logo  {
         position: absolute;

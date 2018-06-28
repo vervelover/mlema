@@ -1,15 +1,39 @@
 .no-header-image {
     .page-header {
+
+        padding: 3rem 0 3rem;
+        text-align: left;
+
+        .wrap {
+            padding: 0;
+        }
+
         &::before {
             display: none;
         }
         h1 {
             color: $dark;
             text-shadow: $lighter-shadow;
+            font-size: 3rem;
         }
         p {
             color: $dark;
             text-shadow: $lighter-shadow;
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: $thin;
+        }
+        .woocommerce-result-count {
+            float: left;
+            font-size: 1.4rem;
         }
     }
+
+    .content-sidebar-wrap {
+        padding-top: 0;
+    }
+}
+
+.term-description {
+    display: none;
 }

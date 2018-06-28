@@ -752,6 +752,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 /* ### WooCommerce Globals */
 .woocommerce .entry.product {
 	padding: 0;
+	overflow: hidden;
 }
 
 .woocommerce abbr.required,
@@ -1159,8 +1160,8 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 	        appearance: none;
-	font-size: 25.6px;
-	font-size: 1.6rem;
+	font-size: 22.4px;
+	font-size: 1.4rem;
 }
 
 .woocommerce div.product form.cart .variations a.reset_variations {

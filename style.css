@@ -1000,7 +1000,8 @@ main {
 	max-width: 56em;
 	margin: 0 auto;
 	clear: both;
-	padding: 10vw 5vw;
+	padding: 23.2px 5vw;
+	padding: 2.9rem 5vw;
 	word-wrap: break-word;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -1089,8 +1090,8 @@ main {
 	font-size: 11.2px;
 	font-size: 1.4rem;
 	width: 100%;
-	margin-bottom: 24px;
-	margin-bottom: 3rem;
+	margin-bottom: 23.2px;
+	margin-bottom: 2.9rem;
 }
 
 .breadcrumb a {
@@ -1561,8 +1562,7 @@ img.alignright,
 --------------------------------------------- */
 .page-header {
 	color: #ffffff;
-	padding: 96px 0 48px;
-	padding: 12rem 0 6rem;
+	padding: 12vh 0 12vh;
 	text-align: center;
 	background-size: cover;
 	background-position: center;
@@ -1598,6 +1598,9 @@ img.alignright,
 	max-width: 48em;
 	margin: 10.4px auto 0;
 	margin: 1.3rem auto 0;
+	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.7);
+	font-weight: 400;
 }
 
 .page-header__logo {
@@ -1633,6 +1636,16 @@ img.alignright,
 	display: none;
 }
 
+.no-header-image .page-header {
+	padding: 24px 0 24px;
+	padding: 3rem 0 3rem;
+	text-align: left;
+}
+
+.no-header-image .page-header .wrap {
+	padding: 0;
+}
+
 .no-header-image .page-header::before {
 	display: none;
 }
@@ -1641,12 +1654,32 @@ img.alignright,
 	color: #312a2d;
 	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+	font-size: 24px;
+	font-size: 3rem;
 }
 
 .no-header-image .page-header p {
 	color: #312a2d;
 	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+	text-align: left;
+	font-size: 11.2px;
+	font-size: 1.4rem;
+	font-weight: 300;
+}
+
+.no-header-image .page-header .woocommerce-result-count {
+	float: left;
+	font-size: 11.2px;
+	font-size: 1.4rem;
+}
+
+.no-header-image .content-sidebar-wrap {
+	padding-top: 0;
+}
+
+.term-description {
+	display: none;
 }
 
 /** Friday 8th June 2018 13:19:12 UTC (core) **/
@@ -4767,7 +4800,7 @@ a.flex-prev::before {
 	.content-sidebar-wrap {
 		width: 96%;
 		max-width: 100em;
-		padding: 6rem 0;
+		padding: 2.9rem 0;
 	}
 	.one-half,
 	.one-third,
@@ -4851,7 +4884,7 @@ a.flex-prev::before {
 		margin-top: 4rem;
 	}
 	.page-header {
-		padding: 22.2rem 0 11.1rem;
+		padding: 20vh 0 20vh;
 	}
 	.single .entry-image-link {
 		margin: 0 0 4rem;
@@ -4993,7 +5026,6 @@ a.flex-prev::before {
 		font-size: 55%;
 	}
 	.content-sidebar-wrap {
-		padding: 5rem 0;
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
 		-webkit-flex-direction: row;
@@ -5808,6 +5840,9 @@ a.flex-prev::before {
 	}
 	.wp-custom-logo .title-area {
 		padding: 0;
+	}
+	.page-header {
+		padding: 25vh 0 25vh;
 	}
 	.menu-item a {
 		padding: 1em 1.25em;
