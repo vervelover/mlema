@@ -197,6 +197,12 @@ function business_custom_header() {
 
 	}
 
+	if ( ! $url && is_front_page() ) {
+
+		$url = get_header_image();
+
+	}
+
 	return has_header_image() ? printf( '<style type="text/css">.page-header{background-image: url(%s);}</style>' . "\n", esc_url( $url ) ) : '';
 
 }

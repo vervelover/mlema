@@ -752,7 +752,6 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 /* ### WooCommerce Globals */
 .woocommerce .entry.product {
 	padding: 0;
-	overflow: hidden;
 }
 
 .woocommerce abbr.required,
@@ -1039,6 +1038,7 @@ body .woocommerce ul.products[class*='columns-'] li.product,
 
 /* ### WooCommerce Product */
 .woocommerce div.product {
+	overflow: hidden;
 	position: relative;
 }
 
@@ -2223,6 +2223,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 		        transition: 0.75s cubic-bezier(0, 1, 0.5, 1);
 		position: absolute;
 		top: 0;
+		left: 0;
 		box-shadow: 0.2rem 2rem 2rem rgba(49, 42, 45, 0.4);
 		z-index: 15;
 	}

@@ -6,7 +6,6 @@
 .woocommerce {
     .entry.product {
         padding: 0;
-        overflow: hidden;
     }
     abbr.required,
     ins {
@@ -162,6 +161,7 @@
                         transition: $site-transition;
                         position: absolute;
                         top: 0;
+                        left: 0;
                         box-shadow: .2rem 2rem 2rem rgba( $dark, 0.4);
                         z-index: 15;
 
@@ -280,6 +280,7 @@
 
 .woocommerce {
     div.product {
+        overflow: hidden;
         position: relative;
         .star-rating {
             float: left;

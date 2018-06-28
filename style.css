@@ -1562,7 +1562,7 @@ img.alignright,
 --------------------------------------------- */
 .page-header {
 	color: #ffffff;
-	padding: 12vh 0 12vh;
+	padding: 15vh 0 15vh;
 	text-align: center;
 	background-size: cover;
 	background-position: center;
@@ -4884,7 +4884,7 @@ a.flex-prev::before {
 		margin-top: 4rem;
 	}
 	.page-header {
-		padding: 20vh 0 20vh;
+		padding: 23vh 0 23vh;
 	}
 	.single .entry-image-link {
 		margin: 0 0 4rem;
@@ -5842,7 +5842,7 @@ a.flex-prev::before {
 		padding: 0;
 	}
 	.page-header {
-		padding: 25vh 0 25vh;
+		padding: 28vh 0 28vh;
 	}
 	.menu-item a {
 		padding: 1em 1.25em;

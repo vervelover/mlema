@@ -319,17 +319,17 @@
 
 .page-header {
     color: $white;
-    padding: 12vh 0 12vh;
+    padding: 15vh 0 15vh;
     text-align: center;
     background-size: cover;
     background-position: center;
     position: relative;
     @include overlay;
     @include breakpoint(sm) {
-        padding: 20vh 0 20vh;
+        padding: 23vh 0 23vh;
     }
     @include breakpoint(lg) {
-        padding: 25vh 0 25vh;
+        padding: 28vh 0 28vh;
     }
     .wrap {
         position: relative;
