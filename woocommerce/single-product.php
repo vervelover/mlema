@@ -17,7 +17,7 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-/** Change Option select placehoòder to group name (i.e. size) */
+/** Change Option select placeholder to group name (i.e. size) */
 add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'ap_filter_dropdown_args', 10 );
 function ap_filter_dropdown_args( $args ) {
     $variation_tax = get_taxonomy( $args['attribute'] );

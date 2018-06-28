@@ -172,6 +172,10 @@ function business_page_excerpt() {
 
 		woocommerce_result_count();
 
+	} elseif ( class_exists( 'WooCommerce' ) && is_product_category() ) {
+
+		echo term_description();
+
 	} elseif ( is_home() ) {
 
 		printf( '<p itemprop="description">%s</p>', do_shortcode( get_the_excerpt( get_option( 'page_for_posts' ) ) ) );

@@ -259,7 +259,7 @@ include_once (get_stylesheet_directory().'/includes/customize.php');
 include_once (get_stylesheet_directory().'/includes/defaults.php');
 
 // Load theme's recommended plugins.
-include_once (get_stylesheet_directory().'/includes/plugins.php');
+// include_once (get_stylesheet_directory().'/includes/plugins.php');
 
 // ADD LANGUAGE BODY CLASS
 
@@ -455,3 +455,19 @@ function ap_breadcrumb_args( $args ) {
 	$args['labels']['404'] = 'Not found: '; // Genesis 1.5 and later
 return $args;
 }
+
+/**
+ * Remove default description column from category
+ *
+ */
+function jw_remove_taxonomy_description($columns)
+{
+ // only edit the columns on the current taxonomy, replace category with your custom taxonomy (don't forget to change in the filter as well)
+ if ( !isset($_GET['taxonomy']) || $_GET['taxonomy'] != 'category' )
+ return $columns;
+
+ // unset the description columns
+ if ( $posts = $columns['description'] ){ unset($columns['description']); }
+ return $columns;
+}
+add_filter('manage_edit-category_columns','jw_remove_taxonomy_description');

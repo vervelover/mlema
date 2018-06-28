@@ -140,6 +140,7 @@ function business_custom_header() {
 	// Get the current page ID.
 	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 
+		add_filter( 'body_class', 'ap_no_header_image_body_class' );
 		$id = wc_get_page_id( 'shop' );
 
 	} elseif ( is_post_type_archive() ) {
@@ -160,7 +161,8 @@ function business_custom_header() {
 
 	} elseif ( is_404() ) {
 
-		$id = get_page_by_path( 'error' );
+		add_filter( 'body_class', 'ap_no_header_image_body_class' );
+		return;
 
 	} elseif ( is_product() ) {
 
@@ -172,7 +174,21 @@ function business_custom_header() {
 
 	}
 
-	$url = get_the_post_thumbnail_url( $id, 'slider' );
+	$url = get_the_post_thumbnail_url( $id, 'hero' );
+
+	if (is_archive() && !is_product_category()) {
+
+		add_filter( 'body_class', 'ap_no_header_image_body_class' );
+		return;
+		
+	} else if ( class_exists( 'WooCommerce' ) && is_product_category() ) {
+
+		global $wp_query;
+		$cat = $wp_query->get_queried_object();
+		$thumb_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+		$url = wp_get_attachment_url( $thumb_id, 'hero' );
+
+	}
 
 	if ( ! $url ) {
 
@@ -182,6 +198,11 @@ function business_custom_header() {
 
 	return has_header_image() ? printf( '<style type="text/css">.page-header{background-image: url(%s);}</style>' . "\n", esc_url( $url ) ) : '';
 
+}
+
+function ap_no_header_image_body_class( $classes ) {
+	$classes[] = 'no-header-image';
+	return $classes;
 }
 
 /**

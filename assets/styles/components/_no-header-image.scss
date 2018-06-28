@@ -1,0 +1,15 @@
+.no-header-image {
+    .page-header {
+        &::before {
+            display: none;
+        }
+        h1 {
+            color: $dark;
+            text-shadow: $lighter-shadow;
+        }
+        p {
+            color: $dark;
+            text-shadow: $lighter-shadow;
+        }
+    }
+}

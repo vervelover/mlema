@@ -1633,6 +1633,22 @@ img.alignright,
 	display: none;
 }
 
+.no-header-image .page-header::before {
+	display: none;
+}
+
+.no-header-image .page-header h1 {
+	color: #312a2d;
+	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.no-header-image .page-header p {
+	color: #312a2d;
+	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 /** Friday 8th June 2018 13:19:12 UTC (core) **/
 #mega-menu-wrap-primary:before,
 #mega-menu-wrap-primary #mega-menu-primary:before,
