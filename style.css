@@ -1643,6 +1643,7 @@ img.alignright,
 }
 
 .no-header-image .page-header .wrap {
+	width: 100%;
 	padding: 0;
 }
 
@@ -1656,6 +1657,7 @@ img.alignright,
 	text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 	font-size: 24px;
 	font-size: 3rem;
+	max-width: 100%;
 }
 
 .no-header-image .page-header p {
@@ -1666,6 +1668,8 @@ img.alignright,
 	font-size: 11.2px;
 	font-size: 1.4rem;
 	font-weight: 300;
+	margin: 10.4px 0 0;
+	margin: 1.3rem 0 0;
 }
 
 .no-header-image .page-header .woocommerce-result-count {
