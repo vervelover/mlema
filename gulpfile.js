@@ -49,7 +49,7 @@ var paths = {
 	images:  ['assets/images/*', '!assets/images/*.svg'],
 	php:     ['./*.php', './**/*.php', './**/**/*.php'],
 	scripts: ['assets/scripts/*.js', '!assets/scripts/min/'],
-	woo:     ['assets/styles/woocommerce.scss', 'assets/styles/_woolayout.scss'],
+	woo:     ['assets/styles/woocommerce.scss', 'assets/styles/_woolayout.scss', 'assets/styles/components/*.scss'],
 	styles:  ['assets/styles/*.scss', 'assets/styles/components/*.scss', '!assets/styles/min/']
 };
 

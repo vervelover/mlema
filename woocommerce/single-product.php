@@ -77,7 +77,7 @@ function ap_summary_shipping_info() {
         </div>
 		<div class="summary-shipping-info">
             <ul>
-                <li><?php _e('Free Shipping and Returns', 'business-pro');?></li>
+                <li><?php _e('Shipping Worldwide / 3-5 days Delivery', 'business-pro');?></li>
             </ul>
         </div>
 		<?php
@@ -107,14 +107,14 @@ function ap_custom_woocommerce_product_description_tab() {
 			echo '</div>';
 		echo '</div>';
 
-        global $product;
-	    if( $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) {
-    		echo '<div class="option-heading"><h2>'; _e('Additional Info', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
-    			echo '<div id="single-product-description">';
-    				woocommerce_product_additional_information_tab();
-    			echo '</div>';
-    		echo '</div>';
-        }
+        // global $product;
+	    // if( $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) {
+    	// 	echo '<div class="option-heading"><h2>'; _e('Additional Info', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
+    	// 		echo '<div id="single-product-description">';
+    	// 			woocommerce_product_additional_information_tab();
+    	// 		echo '</div>';
+    	// 	echo '</div>';
+        // }
         echo '<div class="option-heading"><h2>'; _e('Shipping', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
             echo '<div id="single-product-description">';
                 ?>
@@ -128,7 +128,7 @@ function ap_custom_woocommerce_product_description_tab() {
         echo '<div id="#spedizioni-resi" class="option-heading"><h2>'; _e('Returns and Exchanges', 'business-pro'); echo'</h2><div class="arrow-up">-</div><div class="arrow-down">+</div></div><div class="option-content">';
             echo '<div id="single-product-description">';
                 ?>
-                <p>For online purchases, Max Lemari will refund the purchase price of merchandise that is returned in its original condition and accompanied by the original invoice, original Gucci packaging and security return/exchange label intact and attached to the item. Customized products can be returned with a 20€ penalty.</p>
+                <p>For online purchases, Max Lemari will refund the purchase price of merchandise that is returned in its original condition and accompanied by the original invoice, original Max Lemari packaging and security return/exchange label intact and attached to the item. Customized products can be returned with a 20€ penalty.</p>
                 <p>You must inform Max Lemari of your intention to return the merchandise within 14 days of the date of delivery by (i) directly returning the merchandise to Max Lemari; or (ii) writing your intention to info@maxlemari.com
                 We are a startup and work with almost no margins on Kickstarter. If the need for an exchange arises, we will need to charge for the shipping both ways. Choose your size carefully and read our sizing guidelines.</p>
                 <?php

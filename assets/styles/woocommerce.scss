@@ -1,5 +1,7 @@
 @import 'utilities';
 @import 'woolayout';
+@import 'components/checkout-spinner';
+@import 'components/tm-extra-product-options';
 
 /* ### WooCommerce Globals */
 
@@ -336,18 +338,21 @@
             margin-bottom: 0;
             .variations {
                 table-layout: fixed;
+                width: 49%;
+                float: left;
                 td {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     line-height: 1;
                     padding: 0;
-                    width: 20rem;
+                    width: 100%;
+                    max-width: 25rem;
                     margin: 0 auto;
                     position: relative;
                     font-size: 1.6rem;
                     @include breakpoint(md) {
-                        width: 48%;
+
                         margin: 0;
                     }
                     &::after {
@@ -357,6 +362,7 @@
                         top: 1.3rem;
                         right: 1.4rem;
                         color: $accent;
+                        pointer-events: none;
                     }
                 }
                 td.label {
@@ -422,6 +428,7 @@
     form.cart button {
         float: none;
         padding: 2rem 10rem;
+        min-width: 70%;
         @include breakpoint(md){
             float: left;
             width: 100%;

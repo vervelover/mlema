@@ -22,7 +22,7 @@ include_once (get_template_directory().'/lib/init.php');
 // Define theme constants.
 define('CHILD_THEME_NAME', 'Business Pro Theme');
 define('CHILD_THEME_URL', 'https://seothemes.com/themes/business-pro');
-define('CHILD_THEME_VERSION', '1.0.5ab06');
+define('CHILD_THEME_VERSION', '1.0.5ab07');
 
 // Set Localization (do not remove).
 load_child_theme_textdomain('business-pro-theme', apply_filters('child_theme_textdomain', get_stylesheet_directory().'/languages', 'business-pro-theme'));
@@ -476,3 +476,10 @@ function jw_remove_taxonomy_description($columns)
  return $columns;
 }
 add_filter('manage_edit-category_columns','jw_remove_taxonomy_description');
+
+// Custom Ajax Loader GIF
+
+add_filter('woocommerce_ajax_loader_url', 'woo_custom_cart_loader');
+function woo_custom_cart_loader() {
+  	return __(get_stylesheet_directory_uri().'/assets/images/ajax-loader.gif', 'woocommerce');
+}

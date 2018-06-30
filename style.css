@@ -660,7 +660,7 @@ li {
 hr {
 	border: 0;
 	border-collapse: collapse;
-	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+	border-bottom: 1px solid rgba(49, 42, 45, 0.5);
 	clear: both;
 	padding: 1em 0 0;
 	margin: 0 0 2em;
@@ -737,7 +737,7 @@ input,
 select,
 textarea {
 	background-color: #ffffff;
-	border: 1px solid rgba(230, 230, 230, 0.5);
+	border: 1px solid rgba(49, 42, 45, 0.5);
 	border-radius: 3px;
 	padding: 0.5em 1em;
 	width: 100%;
@@ -754,7 +754,7 @@ textarea:focus {
 }
 
 :focus {
-	outline: 2px solid rgba(230, 230, 230, 0.5);
+	outline: 2px solid rgba(49, 42, 45, 0.5);
 }
 
 input[type='checkbox'],
@@ -768,12 +768,12 @@ input[type='search'] {
 }
 
 ::-moz-placeholder {
-	color: #4c484a;
+	color: #e6e6e6;
 	opacity: 1;
 }
 
 ::-webkit-input-placeholder {
-	color: #4c484a;
+	color: #e6e6e6;
 }
 
 .button,
@@ -904,7 +904,7 @@ video {
 --------------------------------------------- */
 table {
 	background-color: #ffffff;
-	border: 1px solid rgba(230, 230, 230, 0.5);
+	border: 1px solid rgba(49, 42, 45, 0.5);
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 1;
@@ -914,15 +914,15 @@ table {
 }
 
 tbody {
-	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+	border-bottom: 1px solid rgba(49, 42, 45, 0.5);
 }
 
 td,
 th {
 	text-align: left;
 	padding: 0.618em;
-	border-top: 1px solid rgba(230, 230, 230, 0.5);
-	border-right: 1px solid rgba(230, 230, 230, 0.5);
+	border-top: 1px solid rgba(49, 42, 45, 0.5);
+	border-right: 1px solid rgba(49, 42, 45, 0.5);
 }
 
 /* ## Accessibility
@@ -1019,8 +1019,8 @@ main {
 
 .page-builder .content-sidebar-wrap {
 	padding: 0;
-	border-top: 1px solid rgba(230, 230, 230, 0.5);
-	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+	border-top: 1px solid rgba(49, 42, 45, 0.5);
+	border-bottom: 1px solid rgba(49, 42, 45, 0.5);
 }
 
 /* ## Content Widths and Positions
@@ -2466,8 +2466,8 @@ img.alignright,
 	margin: auto;
 	padding: 5vw;
 	background-color: rgba(49, 42, 45, 0.98);
-	border-top: 1px solid rgba(230, 230, 230, 0.5);
-	border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+	border-top: 1px solid rgba(49, 42, 45, 0.5);
+	border-bottom: 1px solid rgba(49, 42, 45, 0.5);
 	position: fixed;
 	overflow: auto;
 	overflow-x: visible;
@@ -2729,7 +2729,7 @@ img.alignright,
 	display: block;
 	padding: 8px 16px;
 	padding: 1rem 2rem;
-	border: 1px solid rgba(230, 230, 230, 0.5);
+	border: 1px solid rgba(49, 42, 45, 0.5);
 	margin-top: 1em;
 	border-radius: 3px;
 }
@@ -3231,7 +3231,7 @@ p.entry-meta {
 }
 
 .footer-widgets .enews input[type='submit']:focus {
-	outline: 2px solid rgba(230, 230, 230, 0.5);
+	outline: 2px solid rgba(49, 42, 45, 0.5);
 }
 
 .footer-widgets .enews .fa-send-o {
@@ -3492,7 +3492,7 @@ div.lSSlideOuter ul.testimonials-list li {
 }
 
 .hero-section .bp-contact-card a {
-	color: rgba(230, 230, 230, 0.5);
+	color: rgba(49, 42, 45, 0.5);
 	text-decoration: none;
 }
 
@@ -5918,7 +5918,7 @@ a.flex-prev::before {
 	}
 	blockquote,
 	pre {
-		border: 1px solid rgba(230, 230, 230, 0.5);
+		border: 1px solid rgba(49, 42, 45, 0.5);
 		page-break-inside: avoid;
 	}
 	.content,

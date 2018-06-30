@@ -1,10 +1,15 @@
 jQuery(document).ready(function($){
 
+	$(".no-animated").zIndex(89);
+
 	var parentwidth = $(".summary").width();
 	$("#small-summary").width(parentwidth);
 
 	var headerHeight = $(".site-header").height();
 	$("#page-header").height(headerHeight);
+
+	var selectHeight = $("table.variations").height();
+	$(".tc-extra-product-options").height(selectHeight);
 
 	// Add reveal class to sticky message after 129px
 	$(document).on("scroll", function(){
@@ -18,7 +23,6 @@ jQuery(document).ready(function($){
 			$("#small-summary").removeClass("scroll");
 
 		}
-
 
 	});
 

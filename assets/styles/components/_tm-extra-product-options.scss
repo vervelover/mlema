@@ -1,0 +1,49 @@
+/* Styles for TM Extra Product Options Plugin */
+
+form.cart {
+
+    .tc-extra-product-options.tc-show {
+        width: 49%;
+        float: right;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-weight: $normal;
+        color: $gray;
+
+        i {
+            font-size: 2.5rem;
+            margin-right: .5rem;
+            color: $gray;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            color: $gray;
+
+            span {
+                border-bottom: 1px solid $gray;
+            }
+        }
+    }
+    .tm-extra-product-options {
+        .tm-extra-product-options-inner {
+            display: flex;
+        }
+    }
+
+    ul#tm-extra-product-options-fields {
+        display: flex;
+        margin: 0;
+    }
+}
+
+.woocommerce div.product .summary form.cart li {
+    margin: 0;
+}
+
+
+
+.fl-overlay {
+    display: none;
+}
