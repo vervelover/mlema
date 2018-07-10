@@ -3070,6 +3070,7 @@ p.entry-meta {
 
 .site-footer a:hover {
 	color: #f4f4f4;
+	text-decoration: underline;
 }
 
 .site-footer .back-to-top {

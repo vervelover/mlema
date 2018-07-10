@@ -1,7 +1,5 @@
 jQuery(document).ready(function($){
 
-	$(".no-animated").zIndex(89);
-
 	var parentwidth = $(".summary").width();
 	$("#small-summary").width(parentwidth);
 
@@ -59,6 +57,11 @@ jQuery(document).ready(function($){
 		$('#small-summary').css('margin-top', 0);
 		}
 
+	});
+
+	$(window).load(function() {
+		var selectHeight = $("table.variations").height();
+		$(".tc-extra-product-options").height(selectHeight);
 	});
 
 });

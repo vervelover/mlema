@@ -42,8 +42,23 @@ form.cart {
     margin: 0;
 }
 
-
-
 .fl-overlay {
     display: none;
+}
+
+.tm-button:hover {
+    background: $dark;
+}
+
+.float_editbox {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.flasho {
+    background: $white;
+}
+
+h3.tm-epo-field-label {
+    text-transform: uppercase;
 }

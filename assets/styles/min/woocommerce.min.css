@@ -846,6 +846,24 @@ form.cart ul#tm-extra-product-options-fields {
 	display: none;
 }
 
+.tm-button:hover {
+	background: #312a2d;
+}
+
+.float_editbox {
+	max-width: 960px;
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+.flasho {
+	background: #ffffff;
+}
+
+h3.tm-epo-field-label {
+	text-transform: uppercase;
+}
+
 /* ### WooCommerce Globals */
 .woocommerce .entry.product {
 	padding: 0;
