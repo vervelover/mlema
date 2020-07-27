@@ -489,7 +489,7 @@ function woo_custom_cart_loader() {
 add_filter( 'woocommerce_adjust_non_base_location_prices', '__return_false' );
 
 // Hide admin bar for non admins
-add_action('after_setup_theme', 'ap_removehide_admin_bar');
+add_action('after_setup_theme', 'ap_hide_admin_bar');
 function ap_hide_admin_bar() {
 	if (!current_user_can('administrator') && !is_admin()) {
   		show_admin_bar(false);

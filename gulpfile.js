@@ -25,8 +25,6 @@ var	args         = require('yargs').argv,
 	csscomb      = require('gulp-csscomb'),
 	cssnano      = require('gulp-cssnano'),
 	filter       = require('gulp-filter'),
-	imagemin     = require('gulp-imagemin'),
-	imageResize  = require('gulp-image-resize'),
 	notify       = require('gulp-notify'),
 	pixrem       = require('gulp-pixrem'),
 	plumber      = require('gulp-plumber'),
@@ -82,7 +80,7 @@ gulp.task('woo', function () {
 	/**
 	 * Process WooCommerce styles.
 	 */
-	gulp.src('assets/styles/woocommerce.scss')
+	return (gulp.src('assets/styles/woocommerce.scss')
 
 		// Notify on error
 		.pipe(plumber({
@@ -128,7 +126,7 @@ gulp.task('woo', function () {
 
 		// Notify on successful compile (uncomment for notifications).
 		// .pipe(notify("Compiled: <%= file.relative %>"));
-
+	)
 });
 
 /**
@@ -141,7 +139,7 @@ gulp.task('styles', function () {
 	/**
 	 * Process main stylesheet.
 	 */
-	gulp.src('assets/styles/style.scss')
+	return (gulp.src('assets/styles/style.scss')
 
 		// Notify on error
 		.pipe(plumber({
@@ -218,7 +216,7 @@ gulp.task('styles', function () {
 
 		// Notify on successful compile (uncomment for notifications).
 		// .pipe(notify("Compiled: <%= file.relative %>"));
-
+	)
 });
 
 /**
@@ -347,6 +345,9 @@ gulp.task('zip', function () {
  *
  * https://www.npmjs.com/package/browser-sync
  */
+function reload(done) {
+  	browsersync.reload();
+}
 gulp.task('watch', function () {
 
 	// HTTPS.
@@ -373,17 +374,18 @@ gulp.task('watch', function () {
 
 
 	// Run tasks when files change.
-	gulp.watch(paths.woo, ['woo']);
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.images, ['images']);
-	gulp.watch(paths.php).on('change', browsersync.reload);
+	gulp.watch(paths.woo, gulp.series('woo'));
+	gulp.watch(paths.styles, gulp.series('styles'));
+	gulp.watch(paths.scripts, gulp.series('scripts'));
+	gulp.watch(paths.php).on('change', reload);
 
 });
 
 /**
  * Create default task.
  */
-gulp.task('default', ['watch'], function () {
+/*gulp.task('default', ['watch'], function () {
 	gulp.start('woo', 'styles', 'scripts', 'images');
-});
+});*/
+
+gulp.task('default', gulp.parallel('woo', 'styles', 'scripts', 'watch'));
