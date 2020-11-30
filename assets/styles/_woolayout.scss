@@ -425,7 +425,8 @@ body .woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page u
 		width: $one-half;
 	}
 	@include breakpoint(sm) {
-		width: $woocommerce-columns;
+		min-width: $woocommerce-columns;
+		flex: 1;
 	}
 }
 

@@ -60,7 +60,11 @@
 }
 
 /* ### WooCommerce Shop Page */
-
+.ul.products li.pif-has-gallery a.woocommerce-loop-product__link:hover .wp-post-image--secondary {
+    width: 100%;
+    top: 0;
+    left: 0;
+}
 .woocommerce {
     .content .entry {
         border-bottom: 0;
