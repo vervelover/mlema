@@ -37,7 +37,7 @@
     "gulp-zip": "*",
     "hover.css": "^2.3.2",
     "postcss-focus": "*",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "yargs": "^9.0.1"
   },
   "devDependencies": {
